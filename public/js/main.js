@@ -13,7 +13,7 @@ ready(function () {
   const links = document.querySelectorAll("[data-link]");
   const sections = document.querySelectorAll("section");
   const openMenu = document.querySelector("#openMenu");
-  // const closeMenu = document.querySelector("#closeMenu");
+  const closeMenu = document.querySelector("#closeMenu");
   const collapsedMenu = document.querySelector("#collapsedMenu");
 
   // ======================================================================
@@ -48,10 +48,10 @@ ready(function () {
   });
 
   openMenu.addEventListener("click", () => {
-    collapsedMenu.classList.remove("hidden");
+    collapsedMenu.classList.add("show");
   });
   closeMenu.addEventListener("click", () => {
-    collapsedMenu.classList.add("hidden");
+    collapsedMenu.classList.remove("show");
   });
   // ====================================================================
   // ============================ NAVBAR END ============================

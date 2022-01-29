@@ -555,11 +555,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px;
   left: 0px;
   display: flex;
+  transform-origin: left;
+  --tw-scale-x: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 1.5rem;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+}
+
+.collapsed-menu.show {
+  transform-origin: right;
+  --tw-scale-x: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .close-menu {
@@ -570,18 +583,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .open-menu__btn, .close-menu__btn {
   display: flex;
-  height: 2rem;
   align-items: center;
 }
 
 .open-menu__btn > :not([hidden]) ~ :not([hidden]), .close-menu__btn > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .navbar__nav {
+  outline: 1px solid red;
   /* TO DO */
+  flex-grow: 1;
 }
 
 .navbar__link.active {
@@ -671,20 +685,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .h-8 {
   height: 2rem;
 }
 
 .h-\[80vh\] {
   height: 80vh;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .w-8 {
@@ -706,10 +712,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.align-\[-\.125em\] {
-  vertical-align: -.125em;
 }
 
 .font-body {
@@ -744,12 +746,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
-
-/* @layer base {
-  section {
-    outline: 1px solid red;
-  }
-} */
 
 @media (min-width: 640px) {
   .sm\:block {

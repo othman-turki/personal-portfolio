@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  section {
-    outline: 1px solid red;
-  }
-} */
-
 @layer components {
   /* ======================================================================
      ============================ NAVBAR START ============================
@@ -22,17 +16,22 @@
     @apply font-bold uppercase tracking-wider text-gray-900;
   }
   .collapsed-menu {
-    @apply fixed inset-0 bg-white px-8 flex flex-col;
+    @apply fixed inset-0 bg-white px-8 pb-6 flex flex-col scale-x-0 origin-left transition-transform duration-1000;
+  }
+  .collapsed-menu.show {
+    @apply scale-x-100 origin-right;
   }
   .close-menu {
     @apply self-end py-4;
   }
   .open-menu__btn,
   .close-menu__btn {
-    @apply h-8 flex items-center space-x-1;
+    @apply flex items-center space-x-2;
   }
   .navbar__nav {
+    /* outline: 1px solid red; */
     /* TO DO */
+    @apply grow;
   }
   .navbar__link.active {
     /* TO DO */
