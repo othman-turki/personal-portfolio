@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  section {
+    outline: 1px solid red;
+  }
+} */
+
+@layer components {
+  /* ======================================================================
+     ============================ NAVBAR START ============================
+     ====================================================================== */
+  .header {
+    @apply fixed top-0 left-0 w-full px-8 lg:px-12 py-4 lg:py-6 bg-white border-b border-gray-100;
+  }
+  .navbar {
+    @apply flex justify-between items-center;
+  }
+  .navbar__brand {
+    @apply font-bold uppercase tracking-wider text-gray-900;
+  }
+  .collapsed-menu {
+    @apply fixed inset-0 bg-white px-8 flex flex-col;
+  }
+  .close-menu {
+    @apply self-end py-4;
+  }
+  .open-menu__btn,
+  .close-menu__btn {
+    @apply h-8 flex items-center space-x-1;
+  }
+  .navbar__nav {
+    /* TO DO */
+  }
+  .navbar__link.active {
+    /* TO DO */
+    @apply text-red-500;
+  }
+  .navbar__nav--desktop {
+    @apply flex items-center space-x-6;
+  }
+  .navbar__link--desktop {
+    @apply text-sm uppercase tracking-wider relative before:absolute before:bottom-0 before:w-full before:h-[1px] before:bg-red-500 before:scale-x-0 before:origin-right before:transition-transform before:duration-300;
+  }
+  .navbar__link--desktop:not(.active) {
+    @apply transition-colors hover:text-gray-900;
+  }
+  .navbar__link--desktop.active {
+    @apply text-gray-900 before:scale-x-100 before:origin-left;
+  }
+  /* ======================================================================
+     ============================= NAVBAR END =============================
+     ====================================================================== */
+}
