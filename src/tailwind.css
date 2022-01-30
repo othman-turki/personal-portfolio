@@ -16,26 +16,26 @@
     @apply font-bold uppercase tracking-wider text-gray-900;
   }
   .collapsed-menu {
-    @apply fixed inset-0 bg-white px-8 pb-6 flex flex-col scale-x-0 origin-left transition-transform duration-1000;
+    @apply fixed inset-0 bg-white px-8 flex flex-col scale-x-0 /* origin-left transition-transform duration-1000 */;
   }
   .collapsed-menu.show {
-    @apply scale-x-100 origin-right;
+    @apply scale-x-100 /* origin-right */;
   }
   .close-menu {
     @apply self-end py-4;
   }
   .open-menu__btn,
   .close-menu__btn {
-    @apply flex items-center space-x-2;
+    @apply flex items-center;
   }
   .navbar__nav {
-    /* outline: 1px solid red; */
-    /* TO DO */
-    @apply grow;
+    @apply grow flex flex-col items-start py-32 space-y-4;
+  }
+  .navbar__link {
+    @apply text-4xl uppercase;
   }
   .navbar__link.active {
-    /* TO DO */
-    @apply text-red-500;
+    @apply bg-gradient-to-tr from-red-500 to-rose-500 bg-clip-text text-transparent;
   }
   .navbar__nav--desktop {
     @apply flex items-center space-x-6;
