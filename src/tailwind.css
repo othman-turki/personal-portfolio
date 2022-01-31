@@ -13,10 +13,13 @@
     @apply flex justify-between items-center;
   }
   .navbar__brand {
-    @apply font-bold uppercase tracking-wider text-gray-900;
+    @apply font-bold uppercase tracking-wider text-gray-800;
   }
   .collapsed-menu {
-    @apply fixed inset-0 bg-white px-8 flex flex-col scale-x-0 /* origin-left transition-transform duration-1000 */;
+    @apply fixed inset-0 bg-white px-8 flex flex-col scale-x-0 overflow-hidden /* origin-left transition-transform duration-1000 */;
+  }
+  .collapsed-menu__watermark {
+    @apply absolute inset-0 pointer-events-none -z-10 flex justify-center items-center text-[16rem] text-gray-50/80 font-semibold -rotate-[64deg];
   }
   .collapsed-menu.show {
     @apply scale-x-100 /* origin-right */;
@@ -29,25 +32,25 @@
     @apply flex items-center;
   }
   .navbar__nav {
-    @apply grow flex flex-col items-start py-32 space-y-4;
+    @apply grow flex flex-col py-32 px-4 space-y-6;
   }
   .navbar__link {
-    @apply text-4xl uppercase;
+    @apply text-4xl uppercase font-bold relative before:absolute before:bottom-0 before:w-full before:h-1 before:bg-gradient-to-br before:from-red-600 before:to-pink-600 before:scale-x-0 before:origin-right before:transition-transform before:duration-300;
   }
   .navbar__link.active {
-    @apply bg-gradient-to-tr from-red-500 to-rose-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-red-600 to-pink-600 bg-clip-text text-transparent before:scale-x-100 before:origin-left;
   }
   .navbar__nav--desktop {
     @apply flex items-center space-x-6;
   }
   .navbar__link--desktop {
-    @apply text-sm uppercase tracking-wider relative before:absolute before:bottom-0 before:w-full before:h-[1px] before:bg-red-500 before:scale-x-0 before:origin-right before:transition-transform before:duration-300;
+    @apply text-sm uppercase font-semibold tracking-wider relative before:absolute before:bottom-0 before:w-full before:h-0.5 before:bg-gradient-to-br before:from-red-600 before:to-pink-600 before:scale-x-0 before:origin-right before:transition-transform before:duration-300;
   }
   .navbar__link--desktop:not(.active) {
-    @apply transition-colors hover:text-gray-900;
+    @apply transition-colors duration-300 hover:text-gray-800;
   }
   .navbar__link--desktop.active {
-    @apply text-gray-900 before:scale-x-100 before:origin-left;
+    @apply bg-gradient-to-br from-red-600 to-pink-600 bg-clip-text text-transparent before:scale-x-100 before:origin-left;
   }
   /* ======================================================================
      ============================= NAVBAR END =============================
