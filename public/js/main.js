@@ -43,7 +43,7 @@ ready(function () {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       let linkAttr = link.dataset.link;
-      document.getElementById(linkAttr).scrollIntoView(false);
+      document.getElementById(linkAttr).scrollIntoView(true);
     });
   });
 

@@ -423,6 +423,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+/* section {
+    outline: 2px solid red;
+    outline-offset: -1px;
+  } */
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -733,13 +738,19 @@ Ensure the default browser behavior of the `hidden` attribute.
      ============================= NAVBAR END =============================
      ====================================================================== */
 
+/* ======================================================================
+     ============================= HOME START =============================
+     ====================================================================== */
+
+/* Code for home section goes here */
+
+/* ======================================================================
+     ============================== HOME END ==============================
+     ====================================================================== */
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mt-\[64px\] {
-  margin-top: 64px;
 }
 
 .flex {
@@ -762,12 +773,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2rem;
 }
 
+.max-w-prose {
+  max-width: 65ch;
+}
+
+.max-w-min {
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+
 .items-center {
   align-items: center;
 }
 
 .justify-center {
   justify-content: center;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .scroll-smooth {
@@ -779,13 +806,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2rem;
 }
 
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
+.pt-\[64px\] {
+  padding-top: 64px;
+}
+
 .font-body {
-  font-family: Poppins, sans-serif;
+  font-family: Montserrat, sans-serif;
 }
 
 .text-2xl {
@@ -798,9 +839,35 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 
 .text-gray-600 {
@@ -818,6 +885,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:block {
     display: block;
@@ -829,17 +901,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
-  .lg\:mt-\[80px\] {
-    margin-top: 80px;
-  }
-
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:pt-\[80px\] {
+    padding-top: 80px;
+  }
+
+  .lg\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
   }
 }
